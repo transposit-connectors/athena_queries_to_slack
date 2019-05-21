@@ -11,6 +11,15 @@
           "parameters": [{
             "name": "query",
             "type": "STRING"
+          }, {
+            "name": "workGroup",
+            "default": {
+              "text": "primary"
+            },
+            "type": "STRING"
+          }, {
+            "name": "resultLocation",
+            "type": "STRING"
           }],
           "js": "hello_world.js"
         },
