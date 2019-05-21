@@ -8,15 +8,16 @@ params => {
       OutputLocation: params.resultLocation
     }
   })[0]["QueryExecutionId"];
-  //return api.run("this.create_execution_record", {id: executionId, tableName: 'new_signup_executionIds'});
+
   console.log(executionId);
+  
+  // Note: Please update this section of code based on your dynamodb's primary key
   return api.run("aws_dynamodb.put_item", {
     Item: {
       event_type: { S: "yesterday_signup_execution_id" },
       execution_id: { S: executionId },
-      daysAgo: { N: params.daysAgo.toString() }
     },
-    TableName: "events"
+    TableName: params.dynamoTableName
   });
 };
 

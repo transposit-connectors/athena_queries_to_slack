@@ -20,6 +20,9 @@
           }, {
             "name": "resultLocation",
             "type": "STRING"
+          }, {
+            "name": "dynamoTableName",
+            "type": "STRING"
           }],
           "js": "hello_world.js"
         },
