@@ -1,7 +1,7 @@
 (params) => {
 	
   // get stored executionId from dynamodb
-  const executionId =  api.run('aws_dynamodb.get_item', {Key:{'event_type': {"S": "sample-event-type"}}, TableName: params.tableName})[0].Item.execution_id.S;
+  const executionId =  api.run('aws_dynamodb.get_item', {Key:{'event_type': {"S": "sample-event-type"}}, TableName: params.dynamoTableName})[0].Item.execution_id.S;
 
   // get query results from executionId
   const results = api.run('aws_athena.get_query_results', {QueryExecutionId: executionId});

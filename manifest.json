@@ -51,7 +51,7 @@
         "id": "post_to_slack",
         "function": {
           "parameters": [{
-            "name": "tableName",
+            "name": "dynamoTableName",
             "type": "STRING"
           }, {
             "name": "channelName",
