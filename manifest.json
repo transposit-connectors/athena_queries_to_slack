@@ -59,11 +59,6 @@
           }],
           "js": "post_to_slack.js"
         }
-      }, {
-        "id": "get_channels_list",
-        "tql": {
-          "tql": "SELECT * FROM slack.get_channels_list\n\n\n/*\n * For sample code and reference material, visit\n * https://docs.transposit.com/get-started/sql-quickstart\n */"
-        }
       }],
       "javascriptAPIVersion": "3",
       "source": "src",
