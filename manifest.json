@@ -4,6 +4,9 @@
       "dependencies": [{
         "name": "transposit/aws_athena:v1.*.*",
         "alias": "aws_athena"
+      }, {
+        "name": "transposit/aws_dynamodb:v3.*.*",
+        "alias": "aws_dynamodb"
       }],
       "operations": [{
         "id": "run_query",
