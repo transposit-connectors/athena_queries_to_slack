@@ -32,6 +32,13 @@
       }, {
         "id": "makeId",
         "function": {
+          "parameters": [{
+            "name": "length",
+            "default": {
+              "text": "35"
+            },
+            "type": "STRING"
+          }],
           "js": "makeId.js"
         }
       }],

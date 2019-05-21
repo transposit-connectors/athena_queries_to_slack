@@ -7,7 +7,7 @@ params => {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
   return text;
-};
+}
 
 /*
  * For sample code and reference material, visit
