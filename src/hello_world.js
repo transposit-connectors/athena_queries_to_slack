@@ -11,7 +11,7 @@ params => {
 
   console.log(executionId);
   
-  // Note: Please update this section of code based on your dynamodb's primary key
+  // Note: Please update this section of code based on your dynamodb's schema
   return api.run("aws_dynamodb.put_item", {
     Item: {
       event_type: { S: "yesterday_signup_execution_id" },
