@@ -7,6 +7,9 @@
       }, {
         "name": "transposit/aws_dynamodb:v3.*.*",
         "alias": "aws_dynamodb"
+      }, {
+        "name": "transposit/slack:v1.*.*",
+        "alias": "slack"
       }],
       "operations": [{
         "id": "run_query",
