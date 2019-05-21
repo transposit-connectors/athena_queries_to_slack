@@ -1,6 +1,10 @@
 {
   "v2": {
     "transposit": {
+      "dependencies": [{
+        "name": "transposit/aws_athena:v1.*.*",
+        "alias": "aws_athena"
+      }],
       "operations": [{
         "id": "hello_world",
         "description": "Returns \"Hello, world\" in different languages",
