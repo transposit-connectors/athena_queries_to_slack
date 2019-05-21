@@ -6,13 +6,21 @@
         "alias": "aws_athena"
       }],
       "operations": [{
-        "id": "hello_world",
-        "description": "Returns \"Hello, world\" in different languages",
+        "id": "run_query",
         "function": {
+          "parameters": [{
+            "name": "query",
+            "type": "STRING"
+          }],
           "js": "hello_world.js"
         },
         "access": {
           "requireUser": true
+        }
+      }, {
+        "id": "makeId",
+        "function": {
+          "js": "makeId.js"
         }
       }],
       "javascriptAPIVersion": "3",
