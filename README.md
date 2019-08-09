@@ -8,7 +8,7 @@ Step 0: We assume you have set up Athena and Dynamodb in your infrastructure
 
 Step 1: Run `run_query`, which runs a query against Athena, and returns an executionId, which is then stored in Dynamodb. The reason we store this executionId instead of using it right away is that your query may take a long time for Athena to finish.
 
-#####Parameters
+Parameters
 
 > `query`: the query you want to run on Athena. Example: `select * from tabalenName limit 10`
 
@@ -20,7 +20,7 @@ Step 1: Run `run_query`, which runs a query against Athena, and returns an execu
 
 Step 2: Once you have finished running an Athena query, you could run `post_to_slack` to send query results to yourself or a channel
 
-#####Parameters  
+Parameters  
 > `dynamoTableName`: the Dynamo table same as above  
 
 > `channelName`: Slack channel name you want to post the data in. Use `@yourUserName` to send to yourself
