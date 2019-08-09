@@ -10,11 +10,8 @@ Step 1: Run `run_query`, which runs a query against Athena, and returns an execu
 
 > Parameters  
 > `query`: the query you want to run on Athena. Example: `select * from tabalenName limit 10`
-
 > `workGroup`: Athena workgroup for running this query
-
 > `resultLocation`: query result output location. Usually people use an S3 bucket. Example `s3://your.bucket.address.com/query-results` 
-
 > `dynamoTableName`: the Dynamo table you want to temporarily store query executionId in
 
 Step 2: Once you have finished running an Athena query, you could run `post_to_slack` to send query results to yourself or a channel
