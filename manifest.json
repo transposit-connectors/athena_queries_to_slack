@@ -2,7 +2,7 @@
   "v2": {
     "transposit": {
       "dependencies": [{
-        "name": "transposit/aws_athena:v1.*.*",
+        "name": "transposit/aws_athena:v2.*.*",
         "alias": "aws_athena"
       }, {
         "name": "transposit/aws_dynamodb:v3.*.*",
