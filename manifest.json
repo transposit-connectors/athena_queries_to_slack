@@ -5,7 +5,7 @@
         "name": "transposit/aws_athena:v2.*.*",
         "alias": "aws_athena"
       }, {
-        "name": "transposit/aws_dynamodb:v3.*.*",
+        "name": "transposit/aws_dynamodb:v4.*.*",
         "alias": "aws_dynamodb"
       }, {
         "name": "transposit/slack:v1.*.*",
