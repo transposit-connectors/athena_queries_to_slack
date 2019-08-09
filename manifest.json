@@ -60,6 +60,16 @@
           "js": "post_to_slack.js"
         }
       }],
+      "dataConnections": [{
+        "ref": "aws_athena",
+        "overrides": {
+          "aws": {
+            "region": "us-west-2",
+            "executionLimits": {
+            }
+          }
+        }
+      }],
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
