@@ -1,6 +1,6 @@
 # Athena Queries to Slack
 
-This app shows how you could run Athena queries, store the result in dynamo db, and post the results to slack.
+This app shows how you could run Athena queries, store the result in DynamoDB, and post the results to Slack.
 
 ## Try it
 
