@@ -82,6 +82,8 @@
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
-    }
+    },
+    "description": "Run Athena queries, store the result in DynamoDB, and post the results to Slack.",
+    "displayName": "Athena Queries to Slack"
   }
 }
