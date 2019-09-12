@@ -10,7 +10,7 @@ Step 1: Run `run_query`, which runs a query against Athena, and returns an execu
 
 ##### Parameters
 
-> `query`: the query you want to run on Athena. Example: `select * from tabalenName limit 10`<br>
+> `query`: the query you want to run on Athena. Example: `select * from tableName limit 10`<br>
 > `workGroup`: Athena workgroup for running this query<br>
 > `resultLocation`: query result output location. Usually people use an S3 bucket. Example `s3://your.bucket.address.com/query-results`<br>
 > `dynamoTableName`: the Dynamo table you want to temporarily store query executionId in
