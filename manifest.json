@@ -1,84 +1,103 @@
 {
   "v2": {
     "transposit": {
-      "dependencies": [{
-        "name": "transposit/aws_athena:v2.*.*",
-        "alias": "aws_athena"
-      }, {
-        "name": "transposit/aws_dynamodb:v4.*.*",
-        "alias": "aws_dynamodb"
-      }, {
-        "name": "transposit/slack:v1.*.*",
-        "alias": "slack"
-      }],
-      "operations": [{
-        "id": "run_query",
-        "function": {
-          "parameters": [{
-            "name": "query",
-            "type": "STRING"
-          }, {
-            "name": "workGroup",
-            "default": {
-              "text": "primary"
-            },
-            "type": "STRING"
-          }, {
-            "name": "resultLocation",
-            "type": "STRING"
-          }, {
-            "name": "dynamoTableName",
-            "type": "STRING"
-          }],
-          "js": "hello_world.js"
+      "dependencies": [
+        {
+          "name": "transposit/aws_athena:v2.*.*",
+          "alias": "aws_athena"
         },
-        "access": {
-          "requireUser": true
+        {
+          "name": "transposit/aws_dynamodb:v4.*.*",
+          "alias": "aws_dynamodb"
+        },
+        {
+          "name": "transposit/slack:v1.*.*",
+          "alias": "slack"
         }
-      }, {
-        "id": "makeId",
-        "function": {
-          "parameters": [{
-            "name": "length",
-            "default": {
-              "text": "35"
-            },
-            "type": "STRING"
-          }],
-          "js": "makeId.js"
+      ],
+      "operations": [
+        {
+          "id": "run_query",
+          "function": {
+            "parameters": [
+              {
+                "name": "query",
+                "type": "STRING"
+              },
+              {
+                "name": "workGroup",
+                "default": {
+                  "text": "primary"
+                },
+                "type": "STRING"
+              },
+              {
+                "name": "resultLocation",
+                "type": "STRING"
+              },
+              {
+                "name": "dynamoTableName",
+                "type": "STRING"
+              }
+            ],
+            "js": "hello_world.js"
+          },
+          "access": {
+            "requireUser": true
+          }
+        },
+        {
+          "id": "makeId",
+          "function": {
+            "parameters": [
+              {
+                "name": "length",
+                "default": {
+                  "text": "35"
+                },
+                "type": "STRING"
+              }
+            ],
+            "js": "makeId.js"
+          }
+        },
+        {
+          "id": "post_to_slack",
+          "function": {
+            "parameters": [
+              {
+                "name": "dynamoTableName",
+                "type": "STRING"
+              },
+              {
+                "name": "channelName",
+                "type": "STRING"
+              }
+            ],
+            "js": "post_to_slack.js"
+          }
         }
-      }, {
-        "id": "post_to_slack",
-        "function": {
-          "parameters": [{
-            "name": "dynamoTableName",
-            "type": "STRING"
-          }, {
-            "name": "channelName",
-            "type": "STRING"
-          }],
-          "js": "post_to_slack.js"
-        }
-      }],
-      "dataConnections": [{
-        "ref": "aws_athena",
-        "overrides": {
-          "aws": {
-            "region": "us-west-2",
-            "executionLimits": {
+      ],
+      "dataConnections": [
+        {
+          "ref": "aws_athena",
+          "overrides": {
+            "aws": {
+              "region": "us-west-2",
+              "executionLimits": {}
+            }
+          }
+        },
+        {
+          "ref": "aws_dynamodb",
+          "overrides": {
+            "aws": {
+              "region": "us-west-2",
+              "executionLimits": {}
             }
           }
         }
-      }, {
-        "ref": "aws_dynamodb",
-        "overrides": {
-          "aws": {
-            "region": "us-west-2",
-            "executionLimits": {
-            }
-          }
-        }
-      }],
+      ],
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
