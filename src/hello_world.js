@@ -1,27 +1,30 @@
-params => {
+(params) => {
   const query = params.query;
 
-    let executionId = api.run("aws_athena.start_query_execution", {$body: {
+  let executionId = api.run("aws_athena.start_query_execution", {
+    $body: {
       QueryString: query,
       ClientRequestToken: api.run("this.makeId")[0],
       WorkGroup: params.workGroup,
       ResultConfiguration: {
-        OutputLocation: params.resultLocation
-      }
-    }})[0]["QueryExecutionId"];
+        OutputLocation: params.resultLocation,
+      },
+    },
+  })[0]["QueryExecutionId"];
 
-    console.log(executionId);
+  console.log(executionId);
 
-
-    // Note: Please update this section of code based on your dynamodb's schema
-    return api.run("aws_dynamodb.put_item", {$body: {
+  // Note: Please update this section of code based on your dynamodb's schema
+  return api.run("aws_dynamodb.put_item", {
+    $body: {
       Item: {
         event_type: { S: "sample-event-type" },
-        execution_id: { S: executionId }
+        execution_id: { S: executionId },
       },
-      TableName: params.dynamoTableName
-    }});
-}
+      TableName: params.dynamoTableName,
+    },
+  });
+};
 
 /*
  * For sample code and reference material, visit
